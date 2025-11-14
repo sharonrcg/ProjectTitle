@@ -363,24 +363,19 @@ function CoverMenu:setupLayout()
         left2_icon_hold_callback = function() FileManager.instance.folder_shortcuts:onShowFolderShortcutsDialog() end,
         -- history
         left3_icon = "history",
-        left3_icon_tap_callback = function() FileManager.instance.history:onShowHist() end,
+        left3_icon_tap_callback = false,
         left3_icon_hold_callback = false,
         -- centered logo
         center_icon = "hero",
         center_icon_tap_callback = false,
-        center_icon_hold_callback = function()
-            if G_reader_settings:readSetting("home_dir") ~= nil then
-                meta_browse_mode = not meta_browse_mode
-                self:onHome()
-            end
-        end,
+        center_icon_hold_callback = false,
         -- open last file
-        right3_icon = "last_document",
-        right3_icon_tap_callback = function() FileManager.instance.menu:onOpenLastDoc() end,
+        right3_icon = "go_up",
+        right3_icon_tap_callback = false,
         right3_icon_hold_callback = false,
         -- up folder
-        right2_icon = "go_up",
-        right2_icon_tap_callback = function() onFolderUp() end,
+        right2_icon = "last_document",
+        right2_icon_tap_callback = function() FileManager.instance.menu:onOpenLastDoc() end,
         right2_icon_hold_callback = false,
         -- plus menu
         right1_icon = self.selected_files and "check" or "plus",
