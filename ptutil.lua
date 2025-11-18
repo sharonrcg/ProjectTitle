@@ -168,6 +168,7 @@ function ptutil.installIcons()
         "history",
         "last_document",
         "plus",
+        "moon",
     }
     local function checkicons()
         logger.info(ptdbg.logprefix, "Checking for icons")

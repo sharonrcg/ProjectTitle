@@ -354,28 +354,28 @@ function CoverMenu:setupLayout()
         title = "",
         subtitle = "",
         -- home
-        left1_icon = "home",
-        left1_icon_tap_callback = function() self:onHome() end,
-        left1_icon_hold_callback = function() self:onShowFolderMenu() end,
+        left1_icon = "moon",
+        left1_icon_tap_callback = function() FileManager.instance.menu:onOpenLastDoc() end,
+        left2_icon_hold_callback = false,
         -- favorites
         left2_icon = "favorites",
         left2_icon_tap_callback = function() FileManager.instance.collections:onShowColl() end,
-        left2_icon_hold_callback = function() FileManager.instance.folder_shortcuts:onShowFolderShortcutsDialog() end,
+        left2_icon_hold_callback = false,
         -- history
         left3_icon = "history",
-        left3_icon_tap_callback = false,
+        left3_icon_tap_callback = function() FileManager.instance.history:onShowHist() end,
         left3_icon_hold_callback = false,
         -- centered logo
         center_icon = "hero",
         center_icon_tap_callback = false,
         center_icon_hold_callback = false,
-        -- open last file
-        right3_icon = "go_up",
+        -- up folder
+        right3_icon = "hero",
         right3_icon_tap_callback = false,
         right3_icon_hold_callback = false,
-        -- up folder
-        right2_icon = "last_document",
-        right2_icon_tap_callback = function() FileManager.instance.menu:onOpenLastDoc() end,
+        -- open last file
+        right2_icon = "hero",
+        right2_icon_tap_callback = false,
         right2_icon_hold_callback = false,
         -- plus menu
         right1_icon = self.selected_files and "check" or "plus",
